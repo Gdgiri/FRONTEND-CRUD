@@ -10,9 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css"; // Ensure Bootstrap is imported
 const EditUser = () => {
   const { id } = useParams();
   const users = useSelector((state) => state.users.users);
-  // need to check the id
   const user = users.find((ele) => ele.id === id);
-  console.log(user);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -29,22 +27,22 @@ const EditUser = () => {
       );
       dispatch(updateUser(response.data.result)); // Adjust according to your Redux setup
       toast.success("User edited successfully!");
-      setName("");
-      setEmail("");
-      setAge("");
       setTimeout(() => navigate("/"), 1500); // Redirect after 1.5 seconds
     } catch (error) {
-      console.error("Error creating user:", error);
-      toast.error("Failed to create user. Please try again.");
+      console.error("Error updating user:", error);
+      toast.error("Failed to update user. Please try again.");
     }
   };
+
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">
-        <div className="col-md-6">
+        <div className="col-lg-6 col-md-8 col-sm-12">
+          {" "}
+          {/* Adjusted for different screen sizes */}
           <div className="card shadow-sm border-light">
             <div className="card-body">
-              <h2 className="card-title mb-4 text-center">Create New User</h2>
+              <h2 className="card-title mb-4 text-center">Edit User</h2>
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="name" className="form-label">
@@ -88,7 +86,6 @@ const EditUser = () => {
                     required
                   />
                 </div>
-                
                 <div className="d-flex justify-content-center">
                   <button className="btn btn-primary btn-lg">
                     Update User

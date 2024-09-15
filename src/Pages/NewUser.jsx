@@ -37,7 +37,7 @@ const NewUser = () => {
     <div className="container mt-5">
       <ToastContainer /> {/* ToastContainer handles notifications */}
       <div className="row justify-content-center">
-        <div className="col-md-6">
+        <div className="col-lg-6 col-md-8 col-sm-12">
           <div className="card shadow-sm border-light">
             <div className="card-body">
               <h2 className="card-title mb-4 text-center">Create New User</h2>
