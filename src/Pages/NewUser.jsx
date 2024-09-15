@@ -52,7 +52,7 @@ const NewUser = () => {
                     className="form-control"
                     placeholder="Enter your name"
                     value={name}
-                    onChange={(e) => setName(e.target.value.toUpperCase())}
+                    onChange={(e) => setName(e.target.value)}
                     required
                   />
                 </div>
