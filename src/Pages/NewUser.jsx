@@ -15,6 +15,7 @@ const NewUser = () => {
   const [age, setAge] = useState("");
 
   const handleSubmit = async (e) => {
+    setName(e.target.value.toUpperCase());
     e.preventDefault();
     try {
       const response = await axios.post(
