@@ -18,7 +18,7 @@ const NewUser = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/user/create-user",
+        "https://backend-crud-aee4.onrender.com/api/user/create-user",
         { name, email, age }
       );
       dispatch(createUser(response.data.result)); // Adjust according to your Redux setup

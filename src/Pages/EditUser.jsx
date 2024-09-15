@@ -24,7 +24,7 @@ const EditUser = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/user/update-user/${id}`,
+        `https://backend-crud-aee4.onrender.com/api/user/update-user/${id}`,
         { name, email, age }
       );
       dispatch(updateUser(response.data.result)); // Adjust according to your Redux setup

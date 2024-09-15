@@ -17,7 +17,7 @@ const Users = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/user/get-user"
+        "https://backend-crud-aee4.onrender.com/api/user/get-user"
       );
       dispatch(getUser(response.data.result));
       toast.success("Users fetched successfully!");
@@ -30,7 +30,7 @@ const Users = () => {
   const handleDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/user/delete-user/${id}`
+        `https://backend-crud-aee4.onrender.com/api/user/delete-user/${id}`
       );
       dispatch(deleteUser({ id }));
       toast.success("User deleted successfully!");
