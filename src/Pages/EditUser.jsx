@@ -19,7 +19,6 @@ const EditUser = () => {
   const [age, setAge] = useState(user.age);
 
   const handleSubmit = async (e) => {
-    setName(e.target.value.toUpperCase());
     e.preventDefault();
     try {
       const response = await axios.put(
@@ -55,7 +54,7 @@ const EditUser = () => {
                     className="form-control"
                     placeholder="Enter your name"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => setName(e.target.value.toUpperCase())}
                     required
                   />
                 </div>
